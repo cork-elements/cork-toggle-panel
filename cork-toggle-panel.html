@@ -25,6 +25,7 @@
       }
 
       iron-icon {
+        color: var(--cork-drop-down-arrow-color, #912046);
         transform: rotateX(0);
         transition: transform 250ms ease-out;
       }
@@ -32,7 +33,7 @@
       iron-icon[closed] {
         transform: rotate(-90deg);
       }
-
+      
     </style>
 
     <div id="label" on-click="toggle">

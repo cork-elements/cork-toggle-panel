@@ -6,28 +6,12 @@
 
     <title>cork-toggle-panel demo</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../cork-toggle-panel.html">
-
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-      </style>
-    </custom-style>
+    <script src="../bundle.js"></script>
   </head>
   <body>
-    <div class="vertical-section-container centered">
-      <h3>Basic cork-toggle-panel demo</h3>
-      <demo-snippet>
-        <template>
-          <cork-toggle-panel label="Test">
-            <div style="height: 40px">This is content</div>
-            <div>More content...</div>
-          </cork-toggle-panel>
-        </template>
-      </demo-snippet>
-    </div>
+    <cork-toggle-panel label="Test">
+      <div style="height: 40px">This is content</div>
+      <div>More content...</div>
+    </cork-toggle-panel>
   </body>
 </html>

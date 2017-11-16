@@ -1,0 +1,33 @@
+{
+  "name": "@ucd-lib/cork-toggle-panel",
+  "version": "2.0.0",
+  "description": "Toggle panel",
+  "main": "cork-toggle-panel.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cork-elements/cork-toggle-panel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cork-elements/cork-toggle-panel/issues"
+  },
+  "homepage": "https://github.com/cork-elements/cork-toggle-panel#readme",
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.0-pre.1",
+    "@polymer/iron-icons": "^3.0.0-pre.1",
+    "@polymer/polymer": "^3.0.0-pre.1"
+  },
+  "devDependencies": {
+    "html-loader": "^0.5.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}

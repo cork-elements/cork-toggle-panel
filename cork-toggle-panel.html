@@ -1,98 +1,39 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../iron-icon/iron-icon.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
+<style>
+  :host {
+    display: block;
+  }
 
+  #label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @apply --cork-toggle-panel-label;
+  }
 
-<dom-module id="cork-toggle-panel">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-      
-      #label {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        @apply --cork-toggle-panel-label;
-      }
+  #content {
+    overflow: hidden;
+    height: 0;
+    transition: height 250ms ease-out;
+    @apply --cork-toggle-panel-content;
+  }
 
-      #content {
-        overflow: hidden;
-        height: 0;
-        transition: height 250ms ease-out;
-        @apply --cork-toggle-panel-content;
-      }
+  iron-icon {
+    color: var(--cork-drop-down-arrow-color, #912046);
+    transform: rotateX(0);
+    transition: transform 250ms ease-out;
+  }
 
-      iron-icon {
-        color: var(--cork-drop-down-arrow-color, #912046);
-        transform: rotateX(0);
-        transition: transform 250ms ease-out;
-      }
+  iron-icon[closed] {
+    transform: rotate(-90deg);
+  }
 
-      iron-icon[closed] {
-        transform: rotate(-90deg);
-      }
-      
-    </style>
+</style>
 
-    <div id="label" on-click="toggle">
-      <div style="flex:1">[[label]]</div>
-      <iron-icon icon="arrow-drop-down" closed$="[[!opened]]"></iron-icon>
-    </div>
+<div id="label" on-click="toggle">
+  <div style="flex:1">[[label]]</div>
+  <iron-icon icon="arrow-drop-down" closed$="[[!opened]]"></iron-icon>
+</div>
 
-    <div id="content">
-      <slot></slot>
-    </div>
-  
-  </template>
-
-  <script>
-    /**
-     * `cork-toggle-panel`
-     * Panel with label and expandable content region
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
-    class CorkTogglePanel extends Polymer.Element {
-      static get is() { return 'cork-toggle-panel'; }
-
-      static get properties() {
-        return {
-          opened: {
-            type: Boolean,
-            value: false
-          },
-          label: {
-            type : String,
-            value : ''
-          }
-        };
-      }
-
-      open() {
-        var h = 5;
-        for( var i = 0; i < this.children.length; i++ ) {
-          h += this.children[i].offsetHeight;
-        }
-        this.$.content.style.height = h+'px';
-        this.opened = true;
-      }
-
-      close() {
-        this.$.content.style.height = '0px';
-        this.opened = false;
-      }
-
-      toggle() {
-        if( this.opened ) this.close();
-        else this.open();
-      }
-
-    }
-
-    window.customElements.define(CorkTogglePanel.is, CorkTogglePanel);
-  </script>
-</dom-module>
+<div id="content">
+  <slot></slot>
+</div>

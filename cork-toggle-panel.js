@@ -10,7 +10,8 @@ export class CorkTogglePanel extends PolymerElement {
     return {
       opened: {
         type: Boolean,
-        value: false
+        value: false,
+        notify : true
       },
       label: {
         type : String,

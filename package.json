@@ -1,6 +1,6 @@
 {
   "name": "@ucd-lib/cork-toggle-panel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Toggle panel",
   "main": "cork-toggle-panel.js",
   "directories": {
